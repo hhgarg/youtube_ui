@@ -1,6 +1,6 @@
 # youtube_ui
 
-A new Flutter application.
+This is a clone of the current youtube UI made with the use of flutter and dart.
 
 ## Getting Started
 
