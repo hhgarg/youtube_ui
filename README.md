@@ -1,6 +1,7 @@
 # youtube_ui
 
 This is a clone of the current youtube UI made with the use of flutter and dart.
+This project conatains user authentication, video playback support, like and dislike button and the share button.
 
 ## Getting Started
 
