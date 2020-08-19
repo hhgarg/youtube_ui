@@ -4,51 +4,32 @@ import 'subscriptionsPage.dart';
 import 'libraryPage.dart';
 import 'package:youtube_ui/ExplorePage.dart';
 import 'searchPage.dart';
+import 'videoPage.dart';
+import 'package:youtube_ui/LoginPage.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  void _onItemTapped(int index){
-      if(index == 0){
-
-      }
-      else if(index==1){
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => ExplorePage()
-            )
-        );
-      }
-      else if(index == 2){
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => subscriptionsPage()
-            )
-        );
-      }
-      else if(index == 3){
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => notificationsPage()
-          )
-        );
-      }
-      else if(index == 4){
-
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => libraryPage()
-            )
-        );
-      }
-
+  void _onItemTapped(int index) {
+    if (index == 0) {
+    } else if (index == 1) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => ExplorePage()));
+    } else if (index == 2) {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => subscriptionsPage()));
+    } else if (index == 3) {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => notificationsPage()));
+    } else if (index == 4) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => libraryPage()));
+    }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,19 +55,20 @@ class _HomePageState extends State<HomePage> {
               color: Colors.black,
             ),
             onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => SearchPage()
-                  )
-              );
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SearchPage()));
             },
           ),
-          Container(
-            margin: const EdgeInsets.all(10),
-            child: CircleAvatar(
-              backgroundImage: AssetImage("assets/"),
+
+          IconButton(
+            icon: Icon(
+              Icons.person,
+              color: Colors.grey[700],
             ),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LoginPage()));
+            },
           ),
         ],
       ),
@@ -102,7 +84,6 @@ class _HomePageState extends State<HomePage> {
                 Icons.home,
               ),
               title: Text("Home"),
-
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.explore),
@@ -119,7 +100,6 @@ class _HomePageState extends State<HomePage> {
               ),
               icon: Icon(Icons.notifications),
               title: Text("Notifications"),
-
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.video_library),
@@ -131,24 +111,35 @@ class _HomePageState extends State<HomePage> {
 
   Widget _body() {
     return ListView(
-      children: List.generate(5, (int i) {
+      children:
+      List.generate(5, (int i) {
         return Column(
           children: <Widget>[
-            Image.asset("assets/image.png"),
-            SizedBox(
-              height: 5,
-            ),
-            ListTile(
-              leading: CircleAvatar(
-                backgroundImage: AssetImage("assets/image.png"),
+            FlatButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => VideoDetail()));
+              },
+              child: Column(
+                children: <Widget>[
+                  Image.asset("assets/image.png"),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage("assets/image.png"),
+                    ),
+                    title: Text(
+                      "This UI is YouTube.",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text("Harsh_Garg * 1 M Views * 1 day ago"),
+                  ),
+                ],
               ),
-              title: Text(
-                "This UI is YouTube.",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              subtitle: Text("Harsh_Garg * 1 M Views * 1 day ago"),
             ),
             SizedBox(
               height: 20,
@@ -158,5 +149,4 @@ class _HomePageState extends State<HomePage> {
       }),
     );
   }
-
 }
