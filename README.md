@@ -3,6 +3,15 @@
 This is a clone of the current youtube UI made with the use of flutter and dart.
 This project conatains user authentication, video playback support, like and dislike button and the share button.
 
+##Screenshots<br/>
+<img src="https://github.com/invictus-15/youtube_ui/blob/master/Screenshot_20200902-213022.png" height="300em" />
+<img src="https://github.com/invictus-15/youtube_ui/blob/master/Screenshot_20200902-213033.png" height="300em" />
+<img src="https://github.com/invictus-15/youtube_ui/blob/master/Screenshot_20200902-213040.png" height="300em" />
+<img src="https://github.com/invictus-15/youtube_ui/blob/master/Screenshot_20200902-213045.png" height="300em" />
+<img src="https://github.com/invictus-15/youtube_ui/blob/master/Screenshot_20200902-213053.png" height="300em" />
+<img src="https://github.com/invictus-15/youtube_ui/blob/master/Screenshot_20200902-213105.png" height="300em" />
+<img src="https://github.com/invictus-15/youtube_ui/blob/master/Screenshot_20200902-213114~2.png" height="300em" />
+
 For APK [click here](app-release.apk)
 
 ## Getting Started
